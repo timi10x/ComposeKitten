@@ -25,6 +25,7 @@ import com.example.androiddevchallenge.data.Breed
 import com.example.androiddevchallenge.data.Cat
 import com.example.androiddevchallenge.ui.theme.brown
 import androidx.compose.ui.Modifier
+import com.example.androiddevchallenge.data.CatColor
 
 @Composable
 fun CatListItem(
@@ -55,7 +56,8 @@ fun CatListItem(
             )
             {
                 val color =
-                    if (cat.breed == Breed.Chihuahua) Color(0xFFE5C096) else Color(0xFFDCE5EC)
+                    if (cat.color == CatColor.Brown) Color(0xFFE5C096) else Color(0xFFDCE5EC)
+
                 Column(
                     modifier = androidx.compose.ui.Modifier
                         .requiredWidth(250.dp)
@@ -126,7 +128,7 @@ fun CatListItem(
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.LocationOn,
-                        contentDescription = "Distance",
+                        contentDescription = null,
                         tint = Color(0xFFF59056),
                         modifier = androidx.compose.ui.Modifier.sizeIn(maxWidth = 14.dp)
                     )
@@ -144,7 +146,7 @@ fun CatListItem(
 
         }
         val imageResourceId =
-            if (cat.breed == Breed.Chihuahua) R.drawable.browncat else R.drawable.greycat
+            if (cat.color == CatColor.Brown) R.drawable.browncat else R.drawable.greycat
 
         Image(
             modifier = androidx.compose.ui.Modifier
@@ -160,5 +162,5 @@ fun CatListItem(
 @Preview("List item")
 @Composable
 private fun ListItemPreview() {
-    CatListItem(Cat("Kitty", Breed.Chihuahua, 1.5, "California (1.5km)")) {}
+    CatListItem(Cat("Kitty", Breed.Chihuahua, 1.5, "California (1.5km)", CatColor.Brown)) {}
 }

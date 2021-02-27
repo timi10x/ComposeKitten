@@ -24,10 +24,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.androiddevchallenge.data.AnimalRepo
-import com.example.androiddevchallenge.data.Animals
-import com.example.androiddevchallenge.data.Breed
-import com.example.androiddevchallenge.data.Cat
+import com.example.androiddevchallenge.data.*
 import com.example.androiddevchallenge.utils.ChipGroup
 
 @Composable
@@ -66,8 +63,8 @@ fun CardContent(onCatListItemClicked: (Cat) -> Unit) {
     )
 
     val cats = arrayListOf(
-        Cat("Kitty", Breed.Chihuahua, 1.5, "California(1.5 Km)"),
-        Cat("Lucy", Breed.Boxer, 2.0, "New York(2 km)")
+        Cat("Kitty", Breed.Chihuahua, 1.5, "California(1.5 Km)", CatColor.Brown),
+        Cat("Lucy", Breed.Boxer, 2.0, "New York(2 km)", CatColor.Gray)
     )
 
     Card(

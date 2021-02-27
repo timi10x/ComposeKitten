@@ -4,5 +4,6 @@ data class Cat(
     val name: String,
     val breed: Breed,
     val age: Double,
-    val location: String
+    val location: String,
+    val color: CatColor
 )
