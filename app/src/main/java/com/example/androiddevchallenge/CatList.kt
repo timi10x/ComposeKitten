@@ -27,34 +27,24 @@ import com.example.androiddevchallenge.ui.theme.brown
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CatList(
-    cats: List<Cat>,
-    onClickCatDetails: (Cat) -> Unit
-) {
-    LazyColumn {
-        itemsIndexed(cats) { _, cat ->
-            CatListItem(cat = cat,
-                modifier = Modifier
-                    .clickable { onClickCatDetails(cat) }
-                    .fillMaxWidth()
-            )
-        }
-    }
-}
-
-@Composable
 fun CatListItem(
     cat: Cat,
-    modifier: Modifier = Modifier
+    onCatListItemClicked: (Cat) -> Unit
 ) {
-    Box(modifier = androidx.compose.ui.Modifier.wrapContentHeight()) {
+    Box(
+        modifier = androidx.compose.ui.Modifier
+            .wrapContentHeight()
+    ) {
         Card(
             modifier = androidx.compose.ui.Modifier
                 .padding(top = 40.dp)
                 .fillMaxWidth()
                 .padding(vertical = 14.dp)
                 .requiredHeight(130.dp)
-                .clip(shape = RoundedCornerShape(16.dp)),
+                .clip(shape = RoundedCornerShape(16.dp))
+                .clickable {
+                    onCatListItemClicked(cat)
+                },
             elevation = 8.dp,
         ) {
             Row(
@@ -64,11 +54,13 @@ fun CatListItem(
                     .clip(shape = RoundedCornerShape(16.dp))
             )
             {
+                val color =
+                    if (cat.breed == Breed.Chihuahua) Color(0xFFE5C096) else Color(0xFFDCE5EC)
                 Column(
                     modifier = androidx.compose.ui.Modifier
                         .requiredWidth(250.dp)
                         .fillMaxHeight()
-                        .background(color = brown)
+                        .background(color = color)
                         .padding(start = 0.dp, top = 0.dp, end = 260.dp, bottom = 0.dp),
                     horizontalAlignment = Alignment.Start,
                     verticalArrangement = Arrangement.SpaceBetween
@@ -81,7 +73,7 @@ fun CatListItem(
 
             Column(
                 modifier = androidx.compose.ui.Modifier.padding(
-                    start = 150.dp,
+                    start = 170.dp,
                     top = 20.dp,
                     end = 16.dp,
                     bottom = 0.dp
@@ -138,7 +130,7 @@ fun CatListItem(
                         tint = Color(0xFFF59056),
                         modifier = androidx.compose.ui.Modifier.sizeIn(maxWidth = 14.dp)
                     )
-                    Spacer(modifier = androidx.compose.ui.Modifier.size(4.dp))
+                    Spacer(modifier = Modifier.size(4.dp))
                     Text(
                         text = cat.location,
                         fontSize = 12.sp,
@@ -151,12 +143,15 @@ fun CatListItem(
 
 
         }
+        val imageResourceId =
+            if (cat.breed == Breed.Chihuahua) R.drawable.browncat else R.drawable.greycat
+
         Image(
             modifier = androidx.compose.ui.Modifier
                 .size(width = 250.dp, height = 200.dp)
                 .align(Alignment.TopStart)
                 .padding(start = 0.dp, top = 0.dp, end = 120.dp, bottom = 10.dp),
-            painter = painterResource(id = R.drawable.browncat),
+            painter = painterResource(id = imageResourceId),
             contentDescription = null
         )
     }
@@ -165,5 +160,5 @@ fun CatListItem(
 @Preview("List item")
 @Composable
 private fun ListItemPreview() {
-    CatListItem(Cat("Kitty", Breed.Chihuahua, 1.5, "California (1.5km)"))
+    CatListItem(Cat("Kitty", Breed.Chihuahua, 1.5, "California (1.5km)")) {}
 }
