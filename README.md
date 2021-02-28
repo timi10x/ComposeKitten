@@ -6,6 +6,11 @@ Template repository for the Jetpack Compose [#AndroidDevChallenge](https://devel
 https://user-images.githubusercontent.com/36578083/109405144-c812bf00-796d-11eb-8a69-2aad7b696b51.mp4
 
 
+![homePage](https://user-images.githubusercontent.com/36578083/109405174-00b29880-796e-11eb-9681-335a1394a8e9.png)
+![homePage2](https://user-images.githubusercontent.com/36578083/109405180-08723d00-796e-11eb-9dce-a817e909bcb7.png)
+![detailsPage](https://user-images.githubusercontent.com/36578083/109405185-0dcf8780-796e-11eb-9000-dee45df77085.png)
+
+![detailsPage2](https://user-images.githubusercontent.com/36578083/109405189-11630e80-796e-11eb-95da-3503b6d683c9.png)
 
 ## Getting started
 Copy this repository by pressing the "Use this template" button in Github.
