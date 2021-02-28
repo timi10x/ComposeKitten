@@ -48,7 +48,9 @@ fun MyApp() {
         }
     } else {
         selectedCat.value?.let {
-            //do sth
+            CatDetailsScreen(it) {
+                selectedCat.value = null
+            }
         }
     }
 }

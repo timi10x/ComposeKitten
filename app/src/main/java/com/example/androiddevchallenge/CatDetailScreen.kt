@@ -1,22 +1,23 @@
 package com.example.androiddevchallenge
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -108,7 +109,7 @@ fun CatDetailsScreen(cat: Cat, onBackPressed: () -> Unit) {
                 ) {
                     Row(
                         modifier = Modifier
-                            .padding(start = 8.dp, top = 50.dp, end = 6.dp, bottom = 0.dp),
+                            .padding(start = 8.dp, top = 25.dp, end = 6.dp, bottom = 0.dp),
                         horizontalArrangement = Arrangement.SpaceEvenly
                     ) {
                         Card(
@@ -255,6 +256,50 @@ fun CatDetailsScreen(cat: Cat, onBackPressed: () -> Unit) {
                         elevation = 8.dp
 
                     ) {
+                        Row(
+                            modifier = Modifier
+                                .padding(start = 16.dp, top = 0.dp, end = 16.dp, bottom = 0.dp)
+                        ) {
+                            Image(
+                                modifier = androidx.compose.ui.Modifier
+                                    .size(60.dp)
+                                    .padding(start = 0.dp, top = 30.dp, end = 0.dp, bottom = 0.dp),
+                                painter = painterResource(id = R.drawable.ic_telephone_call),
+                                contentDescription = null
+                            )
+                            Spacer(modifier = Modifier.size(22.dp))
+
+                            Image(
+                                modifier = androidx.compose.ui.Modifier
+                                    .size(60.dp)
+                                    .padding(start = 0.dp, top = 30.dp, end = 0.dp, bottom = 0.dp),
+                                painter = painterResource(id = R.drawable.ic_messenger),
+                                contentDescription = null
+                            )
+                            Spacer(modifier = Modifier.size(30.dp))
+
+                            val context = LocalContext.current
+                            Button(
+                                shape = RoundedCornerShape(14.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(80.dp)
+                                    .padding(top = 10.dp),
+                                onClick = {
+                                    Toast.makeText(
+                                        context,
+                                        "thank you for adopting me",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                },
+                            ) {
+                                Text(
+                                    text = "Adopt Now",
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFFDCE5EC)
+                                )
+                            }
+                        }
 
                     }
 
@@ -343,6 +388,7 @@ private fun BackArrow(onBackPressed: () -> Unit) {
     }
 }
 
+
 @Composable
 private fun PetImage(breed: Breed) {
     val imageResourceId =
@@ -364,7 +410,7 @@ private fun PetImage(breed: Breed) {
             painter = painterResource(id = imageResourceId),
             contentDescription = null,
             modifier = Modifier
-                .width(480.dp)
+                .width(400.dp)
                 .height(280.dp)
         )
     }

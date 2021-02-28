@@ -44,7 +44,7 @@ fun CatHomeScreen(onCatListItemClicked: (Cat) -> Unit) {
 
             ProfileDetails()
 
-            Spacer(modifier = Modifier.size(50.dp))
+            Spacer(modifier = Modifier.size(25.dp))
 
             CardContent(onCatListItemClicked)
 
