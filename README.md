@@ -22,10 +22,10 @@ I am particularly proud of how easy it is to come up with complex designs easily
 <!-- You can add more screenshots here if you like -->
 <img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
 
-## :cinema Video Demo
+## 🎦 Video Demo
 [Video demo](https://github.com/timmyCoder/ComposeKitten/blob/main/results/video.mp4)
 
-## :point_down :point_down Check out the resource file I used for the designs
+## 👇 👇 Check out the resource file I used for the designs
 [Design Resource](https://www.uplabs.com/posts/pet-adoption-app-40009aec-1dec-4170-a9a0-2dd006e88058)
 
 
