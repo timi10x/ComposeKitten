@@ -2,6 +2,11 @@
 
 Template repository for the Jetpack Compose [#AndroidDevChallenge](https://developer.android.com/dev-challenge).
 
+
+https://user-images.githubusercontent.com/36578083/109405144-c812bf00-796d-11eb-8a69-2aad7b696b51.mp4
+
+
+
 ## Getting started
 Copy this repository by pressing the "Use this template" button in Github.
 Clone your repository and open it in the latest [Android Studio (Canary build)](https://developer.android.com/studio/preview).
