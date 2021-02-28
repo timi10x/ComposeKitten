@@ -37,7 +37,7 @@ private val LightColorPalette = lightColors(
     onPrimary = Color.Black,
     onSecondary = Color.Black,
 
-    )
+)
 
 @Composable
 fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
