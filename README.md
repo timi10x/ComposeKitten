@@ -1,7 +1,7 @@
 # ComposeKittens
 
 
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/timmyCoder/ComposeKitten/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
